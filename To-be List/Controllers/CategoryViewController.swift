@@ -1,10 +1,3 @@
-//
-//  CategoryViewController.swift
-//  Todoey
-//
-//  Created by Philipp Muellauer on 28/11/2019.
-//  Copyright © 2019 Philipp Muellauer. All rights reserved.
-
 import UIKit
 import RealmSwift
 import ChameleonFramework
@@ -25,9 +18,9 @@ class CategoryViewController: SwipeTableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")
+        guard let navBar = navigationController?.navigationBar.scrollEdgeAppearance else { fatalError("Navigation controller does not exist.")
         }
-        navBar.backgroundColor = UIColor(hexString: "#1D9BF6")
+        navBar.backgroundColor = UIColor(hexString: "#D61C4E")
     }
     
     //Mark: - Tableview Datasource Methods
@@ -93,16 +86,24 @@ class CategoryViewController: SwipeTableViewController {
         }
         
         alert.addAction(action)
+        
         alert.addTextField { (field) in
             textField = field
             textField.placeholder = "Add a new category"
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in
+                  return 
+              }
+        alert.addAction(cancelAction)
+       
         present(alert, animated: true, completion: nil)
     }
     
     //Mark: - Tableview Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToItems", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

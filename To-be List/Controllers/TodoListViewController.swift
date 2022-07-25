@@ -1,10 +1,3 @@
-//  ViewController.swift
-//  Todoey
-//
-//  Created by Philipp Muellauer on 26/11/2019.
-//  Copyright © 2019 Philipp Muellauer. All rights reserved.
-//
-
 import UIKit
 import RealmSwift
 import ChameleonFramework
@@ -35,9 +28,10 @@ class TodoListViewController: SwipeTableViewController {
             if let navBarColour = UIColor(hexString: colourHex) {
                 //Original setting: navBar.barTintColor = UIColor(hexString: colourHex)
                 //Revised for iOS13 w/ Prefer Large Titles setting:
-                navBar.backgroundColor = navBarColour
+                navBar.scrollEdgeAppearance!.backgroundColor = navBarColour
                 navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
                 searchBar.barTintColor = navBarColour
+                searchBar.searchTextField.backgroundColor = .white
             }
         }
     }
@@ -55,6 +49,7 @@ class TodoListViewController: SwipeTableViewController {
             if let colour = UIColor(hexString: selectedCategory!.colour)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(toDoItems!.count)) {
                 cell.backgroundColor = colour
                 cell.textLabel?.textColor = ContrastColorOf(colour, returnFlat: true)
+                cell.tintColor = .white
             }
             cell.accessoryType = item.done ? .checkmark : .none
         } else {
@@ -105,7 +100,14 @@ class TodoListViewController: SwipeTableViewController {
             alertTextField.placeholder = "Create new item"
             textField = alertTextField
         }
+        
         alert.addAction(action)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in
+                 return
+              }
+        alert.addAction(cancelAction)
+        
         present(alert, animated: true, completion: nil)
     }
     
