@@ -7,6 +7,7 @@ Used:
 
 -**ChameleonFramework** to generate random background colors of cells, gradients, contrasting tint colors
 
+
 Looks like a To do list app, but it focuses on how you want to feel, rather than what you need to do
 
 Each time a new category cell added, **random backround color** for it is generated (ChameleonFramework)
