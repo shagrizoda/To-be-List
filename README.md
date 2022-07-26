@@ -8,11 +8,13 @@ Used:
 -**ChameleonFramework** to generate random background colors of cells, gradients, contrasting tint colors
 
 Looks like a To do list app, but it focuses on how you want to feel, rather than what you need to do
+
 Each time a new category cell added, **random backround color** for it is generated (ChameleonFramework)
 
 <img width="550" height="650" alt="tobe_2" src="https://user-images.githubusercontent.com/71122864/181023850-dc373697-76df-4521-979b-7ace711e4278.png">
 
 you can add how you want to be feel during the day, then add what you think you need to do to feel this way.
+
 Background color of item cell is the **gradient** color of its category cell (ChameleonFramework)
 
 <img height="650" src="https://user-images.githubusercontent.com/71122864/181023249-c1151f93-0652-42f0-ad61-ded8f4e365ed.png">
