@@ -11,7 +11,7 @@ Looks like a To do list app, but it focuses on how you want to feel, rather than
 
 you can add how you want to be feel during the day, then add what you think you need to do to feel this way
 
-![Simulator Screen Shot - iPhone 12 - 2022-07-20 at 20 25 18] <img src="https://user-images.githubusercontent.com/71122864/181023249-c1151f93-0652-42f0-ad61-ded8f4e365ed.png" align="left" width="400" height="650">
+<img width="400" height="650" src="https://user-images.githubusercontent.com/71122864/181023249-c1151f93-0652-42f0-ad61-ded8f4e365ed.png">
 
 you can use search button, to search for certain tasks
 
